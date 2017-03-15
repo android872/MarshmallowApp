@@ -1,6 +1,8 @@
 package com.example.networks.marshmallowapp;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +10,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Button button ;
+    TextView tv1;
+    int numTimesClicked = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,23 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //BUTTON APP
+        button = (Button) findViewById(R.id.button);
+        tv1 = (TextView) findViewById(R.id.tv1);
+
+        View.OnClickListener btnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numTimesClicked = numTimesClicked +1;
+                String result = "The button got tapped"+ numTimesClicked+" time";
+                if (numTimesClicked !=1) {
+                    result += "s...";
+                }
+                tv1.setText(result);
+            }
+        };
+        button.setOnClickListener(btnClickListener);
     }
 
     @Override
@@ -46,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
-            Toast.makeText(this,"Settings tapped!",Toast.LENGTH_LONG).show();
+            //BUTTON APP
+            Toast.makeText(this,"Settings tapped! Message : "+tv1.getText(),Toast.LENGTH_LONG).show();
+            tv1.setText("back to Hello world");
+            numTimesClicked =0;
             return true;
         }
 
