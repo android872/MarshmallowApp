@@ -1,5 +1,6 @@
 package com.example.networks.marshmallowapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -57,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+
+        //ADDING DYNAMIC MENU OPTION AND NAVIGATING TO IT THROUGH INTENT AND CLICK LISTNER IMPLIMENTAION
+        MenuItem registerActivityItem = menu.add(Menu.NONE,Menu.NONE,107,"Calculator");
+        registerActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        registerActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+              Intent intent = new Intent(MainActivity.this,CalculatorActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+
         return true;
     }
 
@@ -76,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
             numTimesClicked =0;
             return true;
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }
