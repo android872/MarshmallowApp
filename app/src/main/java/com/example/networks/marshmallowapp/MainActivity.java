@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
     Button button ;
     TextView tv1;
     int numTimesClicked = 0;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         button.setOnClickListener(btnClickListener);
+
+
+
     }
 
     @Override
