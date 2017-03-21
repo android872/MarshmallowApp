@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //ADDING DYNAMIC MENU OPTION AND NAVIGATING TO IT THROUGH INTENT AND CLICK LISTNER IMPLIMENTAION
-        MenuItem registerActivityItem = menu.add(Menu.NONE,Menu.NONE,107,"Calculator");
+        //CALCULATOR : ADDING DYNAMIC MENU OPTION AND NAVIGATING TO IT THROUGH INTENT AND CLICK LISTNER IMPLIMENTAION
+        MenuItem registerActivityItem = menu.add(Menu.NONE,Menu.NONE,100,"Calculator");
         registerActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         registerActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
@@ -83,7 +83,19 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        //TOPTEN DOWNLOADER : adding menu item for topten dowload activit
+        MenuItem ttActivityItem = menu.add(Menu.NONE,Menu.NONE,101,"Top 10 Dwonloads");
+        ttActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        ttActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,ToptenDownloader.class);
+                startActivity(intent);
 
+                return false;
+            }
+
+        });
 
         return true;
     }

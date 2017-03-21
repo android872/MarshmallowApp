@@ -21,7 +21,11 @@
         <activity
             android:name=".CalculatorActivity"
             android:label="@string/title_activity_calculator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ToptenDownloader"
+            android:label="@string/title_activity_topten_downloader"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-
+<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
