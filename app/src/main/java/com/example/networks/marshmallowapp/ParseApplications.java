@@ -34,9 +34,9 @@ public class ParseApplications {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
-
             xpp.setInput(new StringReader(this.xmlData));
             int eventType = xpp.getEventType();
+
             while (eventType != XmlPullParser.END_DOCUMENT){
                 String tagName = xpp.getName();
                 switch (eventType){
@@ -45,13 +45,14 @@ public class ParseApplications {
                         if (tagName.equalsIgnoreCase("entry")){
                             inEntry = true;
                             currentRecord = new TopApplication();
+                            break;
                         }
-                        break;
+
                     case XmlPullParser.TEXT:
                         textValue = xpp.getText();
                         break;
                     case XmlPullParser.END_TAG:
-//                        Log.d("xp","Ending tag for "+tagName);
+                        Log.d("xp","Ending tag for "+tagName);
                     if(inEntry){
                         if (tagName.equalsIgnoreCase("entry")){
                             applications.add(currentRecord);

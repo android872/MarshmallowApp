@@ -36,6 +36,9 @@ public class ToptenDownloader extends AppCompatActivity {
 
         //
         btnXmlParse = (Button) findViewById(R.id.btnParse);
+
+
+
         btnXmlParse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,16 +46,19 @@ public class ToptenDownloader extends AppCompatActivity {
                 ParseApplications parseApplications = new ParseApplications(mFileContents);
                 parseApplications.process();
 
-                ArrayAdapter<TopApplication> arrayAdapter = new ArrayAdapter<TopApplication>(
-                        ToptenDownloader.this,R.layout.list_item,parseApplications.getApplications());
-                lvXml.setAdapter(arrayAdapter);
+//                ArrayAdapter<TopApplication> arrayAdapter = new ArrayAdapter<TopApplication>(
+//                        ToptenDownloader.this,R.layout.list_item,parseApplications.getApplications());
+//                lvXml.setAdapter(arrayAdapter);
+//
+//                TextView tv = (TextView) findViewById(R.id.tvxml);
+//                tv.setText(mFileContents);
 
             }
         });
+
         lvXml = (ListView) findViewById(R.id.lvXml);
         DownloadData ttd  = new DownloadData();
-        ttd.downloadXMLFile("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
-
+        ttd.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,8 +106,9 @@ public class ToptenDownloader extends AppCompatActivity {
 
                     }
                     tempBuffer.append(String.copyValueOf(inputBuffer,0,charRead));
-                    return  tempBuffer.toString();
+
                 }
+                return  tempBuffer.toString();
             }catch(IOException e){
                 Log.d("TTD","Unable to download xml file"+e.getMessage());
             }catch(SecurityException e){

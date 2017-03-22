@@ -31,4 +31,13 @@
         android:layout_alignParentRight="@+id/btnParse"
         android:layout_marginTop="19dp" />
 
+    <TextView
+        android:id="@+id/tvxml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnParse"
+        android:layout_alignStart="@+id/btnParse"
+        android:layout_below="@+id/btnParse"
+        android:text="TextView" />
+
 </RelativeLayout>
