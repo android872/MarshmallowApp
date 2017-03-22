@@ -36,7 +36,7 @@ public class TopApplication {
     @Override
     public String toString() {
         return "Name : "+getName()+"\n"+
-                "Artis : "+getArtist()+"\n"+
+                "Artist : "+getArtist()+"\n"+
                 "Release Date : "+getReleaseDate()+"\n";
     }
 }

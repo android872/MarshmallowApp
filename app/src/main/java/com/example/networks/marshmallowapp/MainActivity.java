@@ -97,6 +97,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        //Youtube Player : adding menu item for topten dowload activit
+        MenuItem youtubeActivityItem = menu.add(Menu.NONE,Menu.NONE,101,"Youtube Player");
+        youtubeActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        youtubeActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,YoutubeActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
         return true;
     }
 

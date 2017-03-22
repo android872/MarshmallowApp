@@ -41,36 +41,35 @@ public class ParseApplications {
                 String tagName = xpp.getName();
                 switch (eventType){
                     case XmlPullParser.START_TAG:
-                        Log.d("xp","Starting tag for "+ tagName);
+                       // Log.d("xp","Starting tag for "+ tagName);
                         if (tagName.equalsIgnoreCase("entry")){
                             inEntry = true;
                             currentRecord = new TopApplication();
-                            break;
                         }
-
+                        break;
                     case XmlPullParser.TEXT:
                         textValue = xpp.getText();
                         break;
                     case XmlPullParser.END_TAG:
-                        Log.d("xp","Ending tag for "+tagName);
-                    if(inEntry){
-                        if (tagName.equalsIgnoreCase("entry")){
-                            applications.add(currentRecord);
-                            inEntry = false;
-                        }else if(tagName.equalsIgnoreCase("name")){
-                            currentRecord.setName(textValue);
-                        }else if(tagName.equalsIgnoreCase("artist")){
-                            currentRecord.setArtist(textValue);
-                        }else if(tagName.equalsIgnoreCase("releaseDate")){
-                            currentRecord.setReleaseDate(textValue);
+                       // Log.d("xp","Ending tag for "+tagName);
+                        if(inEntry){
+                            if (tagName.equalsIgnoreCase("entry")){
+                                applications.add(currentRecord);
+                                inEntry = false;
+                            }else if(tagName.equalsIgnoreCase("name")){
+                                currentRecord.setName(textValue);
+                            }else if(tagName.equalsIgnoreCase("artist")){
+                                currentRecord.setArtist(textValue);
+                            }else if(tagName.equalsIgnoreCase("releasedate")){
+                                currentRecord.setReleaseDate(textValue);
+                            }
                         }
-                    }
                         break;
 
                     default:
                         //nothing else to do
-                        }
-                        eventType = xpp.next();
+                }
+                eventType = xpp.next();
             }
         }
         catch (Exception e)
