@@ -51,7 +51,7 @@ private String GOOGLE_API_KEY = "AIzaSyBC8t6DFKIQUp614nN3dHEki0t8Y_WDM1U";
 private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener() {
     @Override
     public void onPlaying() {
-
+        Toast.makeText(YoutubeActivity.this,"مبارکاں!",Toast.LENGTH_LONG).show();
     }
 
     @Override
