@@ -36,7 +36,7 @@ public class ParseApplications {
             XmlPullParser xpp = factory.newPullParser();
             xpp.setInput(new StringReader(this.xmlData));
             int eventType = xpp.getEventType();
-
+applications = new ArrayList<>();
             while (eventType != XmlPullParser.END_DOCUMENT){
                 String tagName = xpp.getName();
                 switch (eventType){

@@ -46,9 +46,9 @@ public class ToptenDownloader extends AppCompatActivity {
                 ParseApplications parseApplications = new ParseApplications(mFileContents);
                 parseApplications.process();
 
-//                ArrayAdapter<TopApplication> arrayAdapter = new ArrayAdapter<TopApplication>(
-//                        ToptenDownloader.this,R.layout.list_item,parseApplications.getApplications());
-//                lvXml.setAdapter(arrayAdapter);
+                ArrayAdapter<TopApplication> arrayAdapter = new ArrayAdapter<TopApplication>(
+                        ToptenDownloader.this,R.layout.list_item,parseApplications.getApplications());
+                lvXml.setAdapter(arrayAdapter);
 //
 //                TextView tv = (TextView) findViewById(R.id.tvxml);
 //                tv.setText(mFileContents);
