@@ -45,20 +45,23 @@ implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+try {
+    Intent intent = null;
+    switch (v.getId()) {
+        case R.id.btnPlay:
+            intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_ID);
+            break;
+        case R.id.btnPlayList:
+            intent = YouTubeStandalonePlayer.createPlaylistIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_PLAYLIST_ID);
+            break;
+        default:
+    }
 
-        Intent intent = null;
-        switch (v.getId()){
-            case R.id.btnPlay:
-                intent = YouTubeStandalonePlayer.createVideoIntent(this,GOOGLE_API_KEY,YOUTBUE_VIDEO_ID);
-                break;
-            case R.id.btnPlayList:
-                intent = YouTubeStandalonePlayer.createPlaylistIntent(this,GOOGLE_API_KEY,YOUTBUE_VIDEO_PLAYLIST_ID);
-                break;
-            default:
-        }
-
-        if (intent != null){
-            startActivity(intent);
-        }
+    if (intent != null) {
+        startActivity(intent);
+    }
+}catch (Exception e){
+    e.printStackTrace();
+}
     }
 }
