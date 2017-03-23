@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.youtube.player.YouTubeStandalonePlayer;
+
 public class MainActivity extends AppCompatActivity {
     Button button ;
     TextView tv1;
@@ -90,6 +92,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this,ToptenDownloader.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+        //Youtube standalone player
+        MenuItem youtubeStandaloneActivityItem = menu.add(Menu.NONE,Menu.NONE,101,"Youtube Standalone Player");
+        youtubeStandaloneActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        youtubeStandaloneActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,StandaloneYoutubeActivity.class);
                 startActivity(intent);
 
                 return false;
