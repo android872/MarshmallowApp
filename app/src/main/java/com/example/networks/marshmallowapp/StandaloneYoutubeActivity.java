@@ -12,13 +12,13 @@ import android.widget.Button;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 public class StandaloneYoutubeActivity extends AppCompatActivity
-implements View.OnClickListener
+        implements View.OnClickListener
 {
     private String GOOGLE_API_KEY = "AIzaSyBC8t6DFKIQUp614nN3dHEki0t8Y_WDM1U";
     private String YOUTBUE_VIDEO_ID = "9qb8Ig3eGtk";
-    private String YOUTBUE_VIDEO_PLAYLIST_ID = "TBA";
+    private String YOUTBUE_VIDEO_PLAYLIST_ID = "LL6z3F-kpI0J3alZPZ_Y0Iug";
     private Button btnPlay;
-    private Button btnPlayList ;
+    private Button btnPlayList;
 
 
 
@@ -45,23 +45,23 @@ implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-try {
-    Intent intent = null;
-    switch (v.getId()) {
-        case R.id.btnPlay:
-            intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_ID);
-            break;
-        case R.id.btnPlayList:
-            intent = YouTubeStandalonePlayer.createPlaylistIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_PLAYLIST_ID);
-            break;
-        default:
-    }
+        try {
+            Intent intent = null;
+            switch (v.getId()) {
+                case R.id.btnPlay:
+                    intent = YouTubeStandalonePlayer.createVideoIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_ID);
+                    break;
+                case R.id.btnPlayList:
+                    intent = YouTubeStandalonePlayer.createPlaylistIntent(this, GOOGLE_API_KEY, YOUTBUE_VIDEO_PLAYLIST_ID);
+                    break;
+                default:
+            }
 
-    if (intent != null) {
-        startActivity(intent);
-    }
-}catch (Exception e){
-    e.printStackTrace();
-}
+            if (intent != null) {
+                startActivity(intent);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
