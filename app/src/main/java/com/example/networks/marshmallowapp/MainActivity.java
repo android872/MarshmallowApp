@@ -2,21 +2,14 @@ package com.example.networks.marshmallowapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 public class MainActivity extends AppCompatActivity {
     Button button ;
@@ -100,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Youtube standalone player
-        MenuItem youtubeStandaloneActivityItem = menu.add(Menu.NONE,Menu.NONE,101,"Youtube Standalone Player");
+        MenuItem youtubeStandaloneActivityItem = menu.add(Menu.NONE,Menu.NONE,102,"Youtube Standalone Player");
         youtubeStandaloneActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         youtubeStandaloneActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
@@ -114,12 +107,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Youtube Player : adding menu item for topten dowload activit
-        MenuItem youtubeActivityItem = menu.add(Menu.NONE,Menu.NONE,101,"Youtube Player");
+        MenuItem youtubeActivityItem = menu.add(Menu.NONE,Menu.NONE,103,"Youtube Player");
         youtubeActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         youtubeActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this,YoutubeActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+
+        //Flickr  : adding menu item for topten dowload activit
+        MenuItem flickrActivityItem = menu.add(Menu.NONE,Menu.NONE,104,"Flickr");
+        flickrActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        flickrActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,Flickr_Main_Activity.class);
                 startActivity(intent);
 
                 return false;

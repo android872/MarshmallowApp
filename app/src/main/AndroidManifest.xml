@@ -38,17 +38,15 @@
         <activity
             android:name=".YoutubeActivity"
             android:label="@string/title_activity_youtube"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".StandaloneYoutubeActivity"
             android:label="@string/title_activity_standalone_youtube"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Flickr_Main_Activity"
+            android:label="@string/title_activity_flickr__main_"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
