@@ -19,6 +19,7 @@ public class GetFlickrJasonData extends GetRawData {
     private List<Photo> mPhotos;
     private Uri mDestinationUri;
 
+
     public GetFlickrJasonData(String searchCritera,boolean matchAll) {
         super(null);
         creatAndUpdateUri(searchCritera, matchAll);
@@ -54,6 +55,11 @@ public class GetFlickrJasonData extends GetRawData {
 
         return mDestinationUri != null;
     }
+
+    public List<Photo> getPhotos() {
+        return mPhotos;
+    }
+
     public  void processResult(){
         if (getDownloadStatus() != DownloadStatus.OK){
             Log.e(LOG_TAG,"Error downloading raw file");
@@ -100,7 +106,9 @@ public class GetFlickrJasonData extends GetRawData {
 
         @Override
         protected String doInBackground(String... params) {
+            String[] par = {mDestinationUri.toString()};
             return super.doInBackground(params);
+
         }
     }
 

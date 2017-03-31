@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         flickrActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intent = new Intent(MainActivity.this,Flickr_Main_Activity.class);
+                Intent intent = new Intent(MainActivity.this,FlickrMainActivity.class);
                 startActivity(intent);
 
                 return false;

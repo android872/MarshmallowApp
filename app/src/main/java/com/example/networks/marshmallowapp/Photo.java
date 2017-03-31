@@ -21,6 +21,14 @@ public class Photo {
         mImage = image;
     }
 
+    public String getImage() {
+        return mImage;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
     @Override
     public String toString() {
         return "Photo{" +

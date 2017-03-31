@@ -44,7 +44,7 @@
             android:label="@string/title_activity_standalone_youtube"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Flickr_Main_Activity"
+            android:name=".FlickrMainActivity"
             android:label="@string/title_activity_flickr__main_"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
