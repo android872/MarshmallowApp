@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     Button button ;
     TextView tv1;
     int numTimesClicked = 0;
@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
+
         //Youtube Player : adding menu item for topten dowload activit
         MenuItem youtubeActivityItem = menu.add(Menu.NONE,Menu.NONE,103,"Youtube Player");
         youtubeActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
@@ -134,6 +136,22 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        //Youtube standalone player
+        MenuItem layoutActivityItem = menu.add(Menu.NONE,Menu.NONE,105,"Layouts");
+        layoutActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        layoutActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,LayoutsActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+
         return true;
     }
 

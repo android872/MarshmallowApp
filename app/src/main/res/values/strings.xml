@@ -6,5 +6,10 @@
     <string name="title_activity_youtube">Youtube Player</string>
     <string name="title_activity_standalone_youtube">Youtube Standalone</string>
     <string name="title_activity_flickr__main_">Flickr Main</string>
+    <string name="title_activity_layouts">All Layouts</string>
+    <string name="title_activity_linear_layout">Linear Layout Activity</string>
+    <string name="title_activity_frame">Frame Activity</string>
+    <string name="title_activity_relative_layout">Relative Layout Activity</string>
+    <string name="title_activity_table_layout">Table Layout Activity</string>
 
 </resources>
