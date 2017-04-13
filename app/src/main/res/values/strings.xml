@@ -11,5 +11,6 @@
     <string name="title_activity_frame">Frame Activity</string>
     <string name="title_activity_relative_layout">Relative Layout Activity</string>
     <string name="title_activity_table_layout">Table Layout Activity</string>
+    <string name="title_activity_table">Table Activity</string>
 
 </resources>
