@@ -77,6 +77,16 @@
             android:label="@string/title_activity_table"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".DBSqliteTestActivity"
+            android:label="@string/title_activity_dbsqlite_test"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".DBContactsViaContentResolverActivity"
+            android:label="@string/title_activity_dbcontacts_via_content_resolver"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

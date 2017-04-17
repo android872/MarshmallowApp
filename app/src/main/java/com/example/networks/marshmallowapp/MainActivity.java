@@ -151,6 +151,20 @@ public class MainActivity extends AppCompatActivity  {
 
         });
 
+        //Youtube standalone player
+        MenuItem DBSqliteTest1ActivityItem = menu.add(Menu.NONE,Menu.NONE,106,"Sqlite Test1");
+        DBSqliteTest1ActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        DBSqliteTest1ActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,DBSqliteTestActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
 
         return true;
     }
