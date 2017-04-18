@@ -87,6 +87,11 @@
             android:label="@string/title_activity_dbcontacts_via_content_resolver"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".FriendsAppActivity"
+            android:label="@string/title_activity_friends_app"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

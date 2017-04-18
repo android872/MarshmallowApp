@@ -6,14 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.networks.marshmallowapp.DBContactsViaContentResolverActivity"
-    tools:showIn="@layout/activity_dbcontacts_via_content_resolver">
-
-    <ListView android:id="@+id/names"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-        >
-
-    </ListView>
+    tools:context="com.example.networks.marshmallowapp.FriendsAppActivity"
+    tools:showIn="@layout/activity_friends_app">
 
 </android.support.constraint.ConstraintLayout>

@@ -16,5 +16,6 @@
     <string name="title_activity_dbcontacts_via_content_resolver">DB Contacts Via Content Resolver
         Activity
     </string>
+    <string name="title_activity_friends_app">Friends App Activity</string>
 
 </resources>
