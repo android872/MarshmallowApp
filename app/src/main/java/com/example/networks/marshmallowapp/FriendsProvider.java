@@ -1,8 +1,11 @@
 package com.example.networks.marshmallowapp;
 
 import android.content.ContentProvider;
+import android.content.ContentValues;
 import android.content.UriMatcher;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.CancellationSignal;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -50,5 +53,22 @@ public class FriendsProvider extends ContentProvider {
                 throw new IllegalArgumentException("Unknow URI: "+uri);
         }
 
+    }
+
+
+    @Nullable
+    @Override
+    public Cursor query(@NonNull Uri uri,
+                        @Nullable String[] projection,
+                        @Nullable String selection,
+                        @Nullable String[] selectionArgs,
+                        @Nullable String sortOrder) {
+        return null;
+    }
+
+    @Nullable
+    @Override
+    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
+        return null;
     }
 }
