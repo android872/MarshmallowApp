@@ -1,4 +1,4 @@
-package com.example.networks.marshmallowapp;
+package com.example.networks.marshmallowapp.friends;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

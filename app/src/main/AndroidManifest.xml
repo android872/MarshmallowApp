@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.networks.marshmallowapp">
 
+    <permission android:name="com.example.networks.marshmallowapp.provider.READWRITE" />
+    
+    <uses-permission android:name="com.example.networks.marshmallowapp.provider.READWRITE"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <!--
@@ -88,10 +92,20 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".FriendsAppActivity"
+            android:name=".friends.FriendsAppActivity"
             android:label="@string/title_activity_friends_app"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        
+        
+        
+        <provider
+            android:authorities="com.example.networks.marshmallowapp.provider"
+            android:name="com.example.networks.marshmallowapp.friends.FriendsProvider"
+            android:exported="true"
+            android:readPermission="com.example.networks.marshmallowapp.provider.READWRITE"
+            android:writePermission="com.example.networks.marshmallowapp.provider.READWRITE"
+            />
     </application>
 
 </manifest>
