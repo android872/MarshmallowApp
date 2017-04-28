@@ -2,4 +2,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="friend_name">25dp</dimen>
     <dimen name="friend_email">20dp</dimen>
+    <dimen name="popup_message">20sp</dimen>
+
 </resources>

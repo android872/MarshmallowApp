@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context=".friends.FriendsAppActivity">
+    <item android:id="@+id/searchRecord"
+          android:icon="@android:drawable/ic_menu_search"
+          app:showAsAction="always"
+          android:orderInCategory="10"
+          android:title="Search Friend"
+          tools:ignore="AppCompatResource"
+        />
+
+    <item android:id="@+id/addRecord"
+          android:icon="@android:drawable/ic_menu_add"
+          app:showAsAction="always"
+          android:orderInCategory="100"
+          android:title="Add Friend"
+          tools:ignore="AppCompatResource"
+        />
+
+
+    <item android:id="@+id/deleteDatabase"
+          app:showAsAction="never"
+          android:orderInCategory="10"
+          android:title="Delete Database"
+          tools:ignore="AppCompatResource"
+        />
+
+</menu>
