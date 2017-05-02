@@ -136,7 +136,7 @@ public class FriendsProvider extends ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         Log.d(TAG,"delete uri="+uri);
-        if (uri.equals(FriendsContract.BASE_CONTENT_URI)) {
+        if (uri.equals(FriendsContract.URI_TALBE)) {
             deleteDatabase();
             return 0;
         }

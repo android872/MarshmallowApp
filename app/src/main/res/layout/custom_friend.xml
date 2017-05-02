@@ -40,6 +40,7 @@
             android:textColor="@color/friend_name"
 
             />
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -64,6 +65,6 @@
                 />
         </LinearLayout>
 
-    </LinearLayout>
+
 
 </LinearLayout>

@@ -20,7 +20,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+
+    android:theme="@android:style/Theme.WithActionBar"
+        >
+        <!--android:theme="@style/AppTheme"-->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -96,9 +99,24 @@
             android:label="@string/title_activity_friends_app"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        
-        
-        
+        <activity android:name=".friends.AddActivity"
+            android:parentActivityName=".friends.FriendsAppActivity"
+                  android:label="Add Friend Title"
+            />
+
+        <activity android:name=".friends.EditActivity"
+                  android:parentActivityName=".friends.FriendsAppActivity"
+                  android:label="Edit Friend Title"
+            />
+
+        <activity android:name=".friends.SearchActivity"
+                  android:parentActivityName=".friends.FriendsAppActivity"
+                  android:label="Search Friend"
+            />
+
+
+
+
         <provider
             android:authorities="com.example.networks.marshmallowapp.provider"
             android:name="com.example.networks.marshmallowapp.friends.FriendsProvider"

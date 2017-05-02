@@ -2,15 +2,16 @@ package com.example.networks.marshmallowapp.friends;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.networks.marshmallowapp.R;
 
@@ -20,7 +21,8 @@ import static com.example.networks.marshmallowapp.friends.FriendsContract.Friend
  * Created by Networks on 4/28/2017.
  */
 
-public class FriendsDialog extends DialogFragment {
+public class FriendsDialog extends android.support.v4.app.DialogFragment {
+    private String TAG = FriendsDialog.class.getSimpleName();
     private LayoutInflater mLayoutInflater;
     public static final String DIALOG_TYPE = "commeand";
     public static final String DELETE_RECORD = "deleteRecord";
@@ -41,6 +43,7 @@ public class FriendsDialog extends DialogFragment {
             builder.setView(view).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+            Toast.makeText(getActivity(),"Deleting record: "+ _id, Toast.LENGTH_LONG).show();
                     ContentResolver contentResolver = getActivity().getContentResolver();
                     Uri uri = buildFriendUri(String.valueOf(_id));
                     contentResolver.delete(uri,null,null);
@@ -48,7 +51,13 @@ public class FriendsDialog extends DialogFragment {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
             });
+
         }else if(command.equals(DELETE_DATABASE)){
             TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
             popupMessage.setText("Are you sure you want to delete database?");
@@ -62,7 +71,13 @@ public class FriendsDialog extends DialogFragment {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
             });
+
         }else if(command.equals(CONFIRM_EXIT)){
             TextView popupMessage = (TextView) view.findViewById(R.id.popup_message);
             popupMessage.setText("Are you sure you wish to exit without saving?");
@@ -71,7 +86,15 @@ public class FriendsDialog extends DialogFragment {
                 public void onClick(DialogInterface dialog, int which) {
                     getActivity().finish();
                 }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
             });
+
+        }else{
+            Log.d(TAG,"Invalid command passed as argument");
         }
 
 

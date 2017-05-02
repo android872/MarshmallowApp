@@ -1,8 +1,8 @@
 package com.example.networks.marshmallowapp.friends;
 
+
 import android.content.ContentResolver;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
@@ -17,7 +17,7 @@ public class FriendsListFragment extends ListFragment
 implements LoaderManager.LoaderCallbacks<List<Friend>>{
 
     private static final String TAG = FriendsListFragment.class.getSimpleName();
-    private FriendsCustomerAdapter mAdapter;
+    private FriendsCustomAdapter mAdapter;
     private static final int LOADER_ID = 1;
     private ContentResolver mContentResolver;
     private List<Friend> mFriends;
@@ -27,7 +27,7 @@ implements LoaderManager.LoaderCallbacks<List<Friend>>{
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);
         mContentResolver = getActivity().getContentResolver();
-        mAdapter = new FriendsCustomerAdapter(getActivity(),getChildFragmentManager());
+        mAdapter = new FriendsCustomAdapter(getActivity(),getActivity().getSupportFragmentManager());
         setEmptyText("No Friends");
         setListAdapter(mAdapter);
         setListShown(false);
