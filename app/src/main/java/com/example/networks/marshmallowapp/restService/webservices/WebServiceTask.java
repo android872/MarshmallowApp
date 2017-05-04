@@ -10,13 +10,11 @@ import com.example.networks.marshmallowapp.restService.Constants;
 
 import org.json.JSONObject;
 
-import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
-
 /**
  * Created by Networks on 5/3/2017.
  */
 
-public class WebServiceTask extends AsyncTask<Void,Void,Boolean> {
+public abstract class WebServiceTask extends AsyncTask<Void,Void,Boolean> {
     private static String TAG = WebServiceUtils.class.getSimpleName();
     public abstract void showProgress();
     public abstract boolean performRequest();

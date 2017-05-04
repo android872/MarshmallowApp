@@ -5,6 +5,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.example.networks.marshmallowapp.restService.RestMainActivity">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:id="@+id/progress"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/info_form"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/email_info_form"
+        >
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:enabled="false"
+            android:singleLine="true"
+            />
 
+    </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="@string/prompt_password"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:enabled="false"
+                android:singleLine="true"
+                android:imeOptions="actionUnspecified"
+
+                android:imeActionLabel="@string/action_sign_in"
+
+                />
+            <!--android:imeActionId="@id/login"-->
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:hint="@string/prompt_name"
+                android:maxLines="1"
+                android:enabled="false"
+                android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNumber"
+                android:hint="@string/prompt_name"
+                android:maxLines="1"
+
+                android:singleLine="true"
+                android:inputType="number"
+                />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/note"
+                android:hint="@string/prompt_name"
+                android:maxLines="10"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/update_button"
+            style="?android:textAppearanceSmall"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_update"
+            android:textStyle="bold"
+            android:onClick="clickUpdateButton"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_button"
+            style="?android:textAppearanceSmall"
+            android:layout_marginTop="16dp"
+            android:text="Delete"
+            android:textStyle="bold"
+            android:onClick="clickDeleteButton"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reset_button"
+            style="?android:textAppearanceSmall"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_reset"
+            android:textStyle="bold"
+            android:onClick="clickResetButton"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sign_out_button"
+            style="?android:textAppearanceSmall"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_sign_out"
+            android:textStyle="bold"
+            android:onClick="clickSignoutButton"
+            />
+    </LinearLayout>
+</ScrollView>
 </android.support.constraint.ConstraintLayout>

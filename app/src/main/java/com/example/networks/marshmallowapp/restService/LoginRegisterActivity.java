@@ -94,7 +94,12 @@ public class LoginRegisterActivity extends AppCompatActivity {
         private final ContentValues mContentValues = new ContentValues();
         private boolean mIsLogin ;
 
-        UserLoginRegisterTask(String email,String password,boolean isLogin){
+        @Override
+        public void hideProgress() {
+            LoginRegisterActivity.this.showProgress(false);
+        }
+
+        UserLoginRegisterTask(String email, String password, boolean isLogin){
             super(LoginRegisterActivity.this);
             mContentValues.put(Constants.EMAIL,email);
             mContentValues.put(Constants.PASSWORD,password);

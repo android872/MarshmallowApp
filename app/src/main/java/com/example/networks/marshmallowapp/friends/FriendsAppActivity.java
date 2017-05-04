@@ -22,7 +22,7 @@ public class FriendsAppActivity extends FragmentActivity {
             FriendsListFragment friendsListFragment = new FriendsListFragment();
             fragmentManager.beginTransaction().add(android.R.id.content,friendsListFragment).commit();
         }
-        //setContentView(R.layout.activity_friends_app);
+        setContentView(R.layout.activity_friends_app);
 
 
 

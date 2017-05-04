@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.networks.marshmallowapp.friends.FriendsAppActivity;
+import com.example.networks.marshmallowapp.restService.RestMainActivity;
+
 public class MainActivity extends AppCompatActivity  {
     Button button ;
     TextView tv1;
@@ -158,6 +161,34 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(MainActivity.this,DBSqliteTestActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+        //Friends activity
+        MenuItem FriendsActivityItem = menu.add(Menu.NONE,Menu.NONE,107,"Friends");
+        FriendsActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        FriendsActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,FriendsAppActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+        //Rest activity
+        MenuItem RestActivityItem = menu.add(Menu.NONE,Menu.NONE,108,"Rest");
+        RestActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        RestActivityItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,RestMainActivity.class);
                 startActivity(intent);
 
                 return false;

@@ -62,7 +62,7 @@ public class WebServiceUtils {
             urlConnection = (HttpURLConnection) urlToRequest.openConnection();
             urlConnection.setConnectTimeout(Constants.CONNECTION_TIMEOUT);
             urlConnection.setReadTimeout(Constants.READ_TIMEOUT);
-            urlConnection.setReadTimeout(method.toString());
+            urlConnection.setRequestMethod(method.toString());
             urlConnection.setDoInput(true);
             urlConnection.setDoOutput(true);
 
