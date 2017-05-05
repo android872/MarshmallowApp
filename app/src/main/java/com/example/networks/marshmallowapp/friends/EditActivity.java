@@ -30,7 +30,9 @@ public class EditActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+/*setContentView :
+Set the activity content from a layout resource. The resource will be inflated,
+adding all top-level views to the activity.*/
         setContentView(R.layout.add_edit);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -55,7 +57,9 @@ public class EditActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
 
-                    ContentValues values = new ContentValues();
+                //ContentValues : This class is used to store a set of values that
+                // the ContentResolver can process.
+                ContentValues values = new ContentValues();
                     values.put(FriendsContract.FriendsColumns.FRIENDS_NAME,mNameTextView.getText().toString());
                     values.put(FriendsContract.FriendsColumns.FRIENDS_PHONE,mPhoneTextView.getText().toString());
                     values.put(FriendsContract.FriendsColumns.FRIENDS_EMAIL,mEmailTextView.getText().toString());

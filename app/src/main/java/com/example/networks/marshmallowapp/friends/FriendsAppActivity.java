@@ -2,8 +2,8 @@ package com.example.networks.marshmallowapp.friends;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,12 +11,21 @@ import android.view.MenuItem;
 import com.example.networks.marshmallowapp.R;
 
 
-
-public class FriendsAppActivity extends FragmentActivity {
+//using AppCompatActivity instead of FragmentActivity
+public class FriendsAppActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        /*FragmentManager : Static library support version of the framework's
+        android.app.FragmentManager. Used to write apps that run on platforms prior to
+        Android 3.0. When running on Android 3.0 or above, this implementation is still
+        used; it does not try to switch to the framework's implementation. See the framework
+        FragmentManager documentation for a class overview.
+Your activity must derive from FragmentActivity to use this. From such an activity,
+you can acquire the FragmentManager by calling FragmentActivity.getSupportFragmentManager.*/
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (fragmentManager.findFragmentById(android.R.id.content) == null){
             FriendsListFragment friendsListFragment = new FriendsListFragment();
@@ -41,6 +50,7 @@ public class FriendsAppActivity extends FragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //MenuInflater : This class is used to instantiate menu XML files into Menu objects.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.friends_menu,menu);
         return super.onCreateOptionsMenu(menu);
