@@ -31,6 +31,7 @@ public class FriendsDialog extends android.support.v4.app.DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        //A subclass of Dialog that can display one, two or three buttons. If you only want to display a String in this dialog box, use the setMessage() method. If you want to display a more complex view, look up the FrameLayout called "custom" and add your view to it:
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         mLayoutInflater = getActivity().getLayoutInflater();
         final View view = mLayoutInflater.inflate(R.layout.friend_layout,null);
@@ -44,6 +45,7 @@ public class FriendsDialog extends android.support.v4.app.DialogFragment {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
             Toast.makeText(getActivity(),"Deleting record: "+ _id, Toast.LENGTH_LONG).show();
+                    //This class provides applications access to the content model.
                     ContentResolver contentResolver = getActivity().getContentResolver();
                     Uri uri = buildFriendUri(String.valueOf(_id));
                     contentResolver.delete(uri,null,null);

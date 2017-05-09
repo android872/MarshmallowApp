@@ -16,6 +16,13 @@ public class FriendsContract {
     }
 
     public static final String CONTENT_AUTHORITY = "com.example.networks.marshmallowapp.provider";
+    //Uri : Immutable URI reference. A URI reference includes a URI and a fragment,
+    // the component of the URI following a '#'. Builds and parses URI references which
+    // conform to RFC 2396.
+    //In the interest of performance, this class performs little to no validation.
+    // Behavior is undefined for invalid input. This class is very forgiving--in the
+    // face of invalid input, it will return garbage rather than throw an exception
+    // unless otherwise specified.
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://"+ CONTENT_AUTHORITY);
     private static final String PATH_FRIENDS = "friends";
 

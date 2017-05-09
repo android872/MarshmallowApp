@@ -64,6 +64,9 @@ public class FriendsCustomAdapter extends ArrayAdapter<Friend> {
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_NAME,name);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_PHONE,phone);
                 intent.putExtra(FriendsContract.FriendsColumns.FRIENDS_EMAIL,email);
+                //GetContext() Returns the context associated with this array adapter.
+                // The context is used to create views from the resource passed to
+                // the constructor.
                 getContext().startActivity(intent);
 
             }
@@ -74,6 +77,7 @@ public class FriendsCustomAdapter extends ArrayAdapter<Friend> {
             @Override
             public void onClick(View v) {
                 FriendsDialog dialog = new FriendsDialog();
+                //*Bundle : A mapping from String values to various Parcelable types.
                 Bundle args = new Bundle();
                 args.putString(FriendsDialog.DIALOG_TYPE,FriendsDialog.DELETE_RECORD);
                 args.putInt(FriendsContract.FriendsColumns.FRIENDS_ID,_id);
