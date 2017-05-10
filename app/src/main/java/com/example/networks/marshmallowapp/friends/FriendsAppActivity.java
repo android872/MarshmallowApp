@@ -12,6 +12,8 @@ import com.example.networks.marshmallowapp.R;
 
 
 //using AppCompatActivity instead of FragmentActivity
+/*AppCompatActivity : Base class for activities that use the support library action bar features.
+You can add an ActionBar to your activity when running on API level 7 or higher by extending this class for your activity and setting the activity theme to Theme.AppCompat or a similar theme.*/
 public class FriendsAppActivity extends AppCompatActivity {
 
     @Override

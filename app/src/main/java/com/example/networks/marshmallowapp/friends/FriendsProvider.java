@@ -16,7 +16,12 @@ import android.util.Log;
 /**
  * Created by Networks on 4/18/2017.
  */
-
+/*ContentProvider : Content providers are one of the primary building blocks of Android applications,
+providing content to applications. They encapsulate data and provide it to applications
+through the single ContentResolver interface. A content provider is only required if you
+need to share data between multiple applications. For example, the contacts data is used
+by multiple applications and must be stored in a content provider. If you don't need to
+share data amongst multiple applications you can use a database directly via SQLiteDatabase.*/
 public class FriendsProvider extends ContentProvider {
     private FriendsDatabase mOpenHelper;
     private static String TAG = FriendsProvider.class.getSimpleName();

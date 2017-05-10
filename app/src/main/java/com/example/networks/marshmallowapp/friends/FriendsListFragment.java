@@ -12,7 +12,12 @@ import java.util.List;
 /**
  * Created by Networks on 4/27/2017.
  */
+/*ListFragment : Static library support version of the framework's android.app.ListFragment. Used to write apps that run on platforms prior to Android 3.0. When running on Android 3.0 or above, this implementation is still used; it does not try to switch to the framework's implementation. See the framework SDK documentation for a class overview.*/
 
+/*LoaderManager : Static library support version of the framework's android.app.LoaderManager. Used to write apps that run on platforms prior to Android 3.0. When running on Android 3.0 or above, this implementation is still used; it does not try to switch to the framework's implementation. See the framework SDK documentation for a class overview.
+Your activity must derive from FragmentActivity to use this.*/
+
+/*LoaderCallBacks : Callback interface for a client to interact with the manager.*/
 public class FriendsListFragment extends ListFragment
 implements LoaderManager.LoaderCallbacks<List<Friend>>{
 

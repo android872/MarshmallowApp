@@ -15,11 +15,18 @@ import java.util.List;
 /**
  * Created by Networks on 4/27/2017.
  */
-
+/*AsyncTaskLoader : Static library support version of the framework's android.content.
+AsyncTaskLoader. Used to write apps that run on platforms prior to Android 3.0.
+When running on Android 3.0 or above, this implementation is still used; it does not
+try to switch to the framework's implementation. See the framework SDK documentation
+for a class overview.*/
 public class FriendsListLoader extends AsyncTaskLoader<List<Friend>> {
     private static final String TAG = FriendsListLoader.class.getSimpleName();
     private List<Friend> mFriends;
     private ContentResolver mContentResolver;
+
+    /*Cursor : This interface provides random read-write access to the result set returned by a database query.
+Cursor implementations are not required to be synchronized so code using a Cursor from multiple threads should perform its own synchronization when using the Cursor.*/
     private Cursor mCursor;
 
     public FriendsListLoader(Context context, Uri uri, ContentResolver contentResolver) {

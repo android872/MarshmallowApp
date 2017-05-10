@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by Networks on 4/28/2017.
  */
-
+/*ArrayAdapter : A concrete BaseAdapter that is backed by an array of arbitrary objects. By default this class expects that the provided resource id references a single TextView. If you want to use a more complex layout, use the constructors that also takes a field id. That field id should reference a TextView in the larger layout resource.*/
 public class FriendsCustomAdapter extends ArrayAdapter<Friend> {
     private LayoutInflater mLayoutInflater;
     private static FragmentManager sFragmentManager;

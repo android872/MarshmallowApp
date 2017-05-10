@@ -8,7 +8,9 @@ import android.provider.BaseColumns;
 /**
  * Created by Networks on 4/18/2017.
  */
-
+/*SQLiteHelpter :
+A helper class to manage database creation and version management.
+You create a subclass implementing onCreate(SQLiteDatabase), onUpgrade(SQLiteDatabase, int, int) and optionally onOpen(SQLiteDatabase), and this class takes care of opening the database if it exists, creating it if it does not, and upgrading it as necessary. Transactions are used to make sure the database is always in a sensible state.*/
 public class FriendsDatabase extends SQLiteOpenHelper {
     private static final String TAG = FriendsDatabase.class.getSimpleName();
     private static final String DATABASE_NAME = "friends.db";

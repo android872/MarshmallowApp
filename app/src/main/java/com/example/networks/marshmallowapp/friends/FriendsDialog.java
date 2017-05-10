@@ -20,7 +20,7 @@ import static com.example.networks.marshmallowapp.friends.FriendsContract.Friend
 /**
  * Created by Networks on 4/28/2017.
  */
-
+/*DialogFragment : Static library support version of the framework's android.app.DialogFragment. Used to write apps that run on platforms prior to Android 3.0. When running on Android 3.0 or above, this implementation is still used; it does not try to switch to the framework's implementation. See the framework SDK documentation for a class overview.*/
 public class FriendsDialog extends android.support.v4.app.DialogFragment {
     private String TAG = FriendsDialog.class.getSimpleName();
     private LayoutInflater mLayoutInflater;
