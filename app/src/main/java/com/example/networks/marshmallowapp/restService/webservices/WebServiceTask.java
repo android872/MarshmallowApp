@@ -61,6 +61,7 @@ public abstract class WebServiceTask extends AsyncTask<Void,Void,Boolean> {
     }
     public boolean hasError(JSONObject obj){
         if (obj != null){
+            //optInt : Returns the value mapped by name if it exists and is an int or can be coerced to an int, or 0 otherwise.
             int status = obj.optInt(Constants.STATUS);
             Log.d(TAG,"Response: "+obj.toString());
             mMessage = obj.optString(Constants.MESSAGE);
