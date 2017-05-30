@@ -35,5 +35,6 @@
     <string name="error_url_not_found">Invalid URL! File could not be found</string>
     <string name="error_password_length">Password length must be at least 5 characters long</string>
     <string name="infot_label">User Information</string>
+    <string name="title_activity_static_data">StaticDataActivity</string>
 
 </resources>

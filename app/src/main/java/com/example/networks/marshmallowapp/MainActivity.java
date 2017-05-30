@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.networks.marshmallowapp.LocalDataStorage.StaticDataActivity;
 import com.example.networks.marshmallowapp.friends.FriendsAppActivity;
 import com.example.networks.marshmallowapp.restService.RestMainActivity;
 
@@ -182,6 +183,21 @@ public class MainActivity extends AppCompatActivity  {
 
         });
 
+        //LYNDA STATIC RESOURCES RECYCLER VIEW EXAMPLE
+        MenuItem StatticDAtaItem = menu.add(Menu.NONE,Menu.NONE,109,"Statict Data Recycler");
+        StatticDAtaItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        StatticDAtaItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this,StaticDataActivity.class);
+                startActivity(intent);
+
+                return false;
+            }
+
+        });
+
+
         //Rest activity
         MenuItem RestActivityItem = menu.add(Menu.NONE,Menu.NONE,108,"Rest");
         RestActivityItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
@@ -195,7 +211,6 @@ public class MainActivity extends AppCompatActivity  {
             }
 
         });
-
 
         return true;
     }

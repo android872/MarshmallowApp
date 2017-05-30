@@ -21,8 +21,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--android:theme="@android:style/Theme.WithActionBar">-->
 
+        <!-- android:theme="@android:style/Theme.WithActionBar"> -->
 
         <activity
             android:name=".MainActivity"
@@ -121,10 +121,19 @@
 
         <activity android:name=".restService.RestMainActivity">
         </activity>
-        <activity android:name=".restService.LoginRegisterActivity"
+        <activity
+            android:name=".restService.LoginRegisterActivity"
             android:label="@string/app_name"
-                  android:noHistory="true"
-            >
+            android:noHistory="true">
+        </activity>
+        <activity
+            android:name=".LocalDataStorage.StaticDataActivity"
+            android:label="@string/title_activity_static_data"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".LocalDataStorage.DetailActivity"
+            android:parentActivityName=".LocalDataStorage.StaticDataActivity" >
+
 
         </activity>
     </application>
